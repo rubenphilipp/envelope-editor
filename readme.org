@@ -1,0 +1,34 @@
+# -*- eval: (flyspell-mode); eval: (ispell-change-dictionary "en") -*-
+#+title: envelope-editor
+#+author: Ruben Philipp
+#+date: 2024-05-06
+#+startup: showall 
+
+#+begin_comment
+$$ Last modified:  00:50:45 Tue May  7 2024 CEST
+#+end_comment
+
+A simple Max/MSP program to edit envelopes to be used esp. with Common Music
+or slippery-chicken envelopes (e.g. with emacs). 
+
+You might want to take advantage by its full features by compiling the
+project as an application and adding the following lines to your Emacs config
+file (e.g. ~.emacs~).
+
+#+begin_src elisp
+(global-set-key (kbd "C-c o N")
+                '(lambda ()
+                   (interactive)
+                   (let ((data-lst (replace-regexp-in-string
+                                    "['()]"
+                                    ""
+                                    (sly-last-expression)))
+                         (outfile "/tmp/envelope-editor_in.txt"))
+                     (message data-lst)
+                     (f-write-text data-lst 'utf-8 outfile)
+                     (shell-command "open -n -a envelope-editor")
+                     )))
+#+end_src
+
+Note: This has been tested on MacOS and requires the envelope-editor.app to be
+pesent in your \/Applications directory.
