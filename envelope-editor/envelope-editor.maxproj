@@ -2,7 +2,7 @@
 	"name" : "envelope-editor",
 	"version" : 1,
 	"creationdate" : 3797873875,
-	"modificationdate" : 3797875729,
+	"modificationdate" : 3797881253,
 	"viewrect" : [ 25.0, 119.0, 300.0, 500.0 ],
 	"autoorganize" : 1,
 	"hideprojectwindow" : 0,
