@@ -5,7 +5,7 @@
 #+startup: showall 
 
 #+begin_comment
-$$ Last modified:  00:50:45 Tue May  7 2024 CEST
+$$ Last modified:  15:14:23 Mon May 20 2024 CEST
 #+end_comment
 
 A simple Max/MSP program to edit envelopes to be used esp. with Common Music
@@ -26,7 +26,7 @@ file (e.g. ~.emacs~).
                          (outfile "/tmp/envelope-editor_in.txt"))
                      (message data-lst)
                      (f-write-text data-lst 'utf-8 outfile)
-                     (shell-command "open -n -a envelope-editor")
+                     (shell-command "open -a envelope-editor")
                      )))
 #+end_src
 
